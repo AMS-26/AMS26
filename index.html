@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Invoer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Roboto', sans-serif; text-align: center;">
+
+    <div id="code-input-container" style="max-width: 300px; margin: 50px auto;">
+        <h3 style="font-size: 24px; color: #333;">Code</h3>
+        <input type="text" id="codeInput" placeholder="Voer je code in" style="width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+        <button onclick="checkCode()" style="width: 100%; padding: 12px; margin-top: 10px; background-color: #0073e6; color: white; border: none; cursor: pointer; font-size: 16px; border-radius: 4px; font-weight: bold;">
+            Ga naar aanbieding
+        </button>
+    </div>
+
+    <script>
+        function checkCode() {
+            var code = document.getElementById("codeInput").value.trim().toLowerCase();
+            var codeLinks = {
+                "paris123": "https://www.skyscanner.nl/paris-deal",
+                "london456": "https://www.skyscanner.nl/london-deal",
+                "rome789": "https://www.skyscanner.nl/rome-deal"
+            };
+
+            if (codeLinks[code]) {
+                window.location.href = codeLinks[code];
+            } else {
+                alert("Ongeldige code. Probeer het opnieuw.");
+            }
+        }
+    </script>
+
+</body>
+</html>
