@@ -27,15 +27,20 @@
         #logo {
             width: 160px;
             margin-bottom: 20px;
-            border-radius: 60px;
+            border-radius: 75px;
         }
 
         #slogan {
-            font-size: 12px;
-            color: #f18ec9;
-            margin-top: -10px;
-            margin-bottom: 40px;
-            opacity: 0.8;
+            #slogan {
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Arial', sans-serif;
+    color: #f18ec9;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
         }
 
         #code-input-container {
@@ -117,12 +122,13 @@
 <body>
     <main>
         <img src="AMS2.png" alt="Bedrijfslogo" id="logo">
-        <div id="slogan">Wij speuren naar deals. Jij pakt je koffer.</div>
 
         <div id="code-input-container">
             <h3>Voer je code in</h3>
             <input type="text" id="codeInput" placeholder="Bijvoorbeeld: AMS123">
             <button onclick="checkCode()">Ga naar aanbieding</button>
+
+             <div id="slogan">Wij speuren naar deals. Jij pakt je koffer.</div>
         </div>
     </main>
 
