@@ -4,25 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Invoer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #031533;
+            font-family: 'Archivo Black', sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        #logo {
+            width: 160px;
+            margin-bottom: 20px;
+        }
+
+        #slogan {
+            font-size: 12px;
+            color: #f18ec9;
+            margin-top: -10px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+
+        #code-input-container {
+            background-color: white;
+            color: #031533;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #f18ec9;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            border: 2px solid #f18ec9;
+            border-radius: 8px;
+            outline: none;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #f18ec9;
+            color: #031533;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffaad6;
+        }
+
+        #uitleg {
+            padding: 60px 20px;
+            background-color: #02102a;
+            margin-top: 60px;
+            color: white;
+        }
+
+        #uitleg h4 {
+            color: #f18ec9;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        #uitleg ol {
+            list-style: none;
+            padding: 0;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        #uitleg ol li::before {
+            content: counter(item) ". ";
+            counter-increment: item;
+            color: #f18ec9;
+        }
+
+        #uitleg ol li {
+            counter-reset: item;
+            margin-bottom: 12px;
+        }
+    </style>
 </head>
-<body style="font-family: 'Roboto', sans-serif; text-align: center;">
+<body>
+    <main>
+        <img src="image.png" alt="Bedrijfslogo" id="logo">
+        <div id="slogan">Wij speuren naar deals. Jij pakt je koffer.</div>
 
-    <!-- Logo afbeelding bovenaan de pagina -->
-    <div style="margin-top: 20px;">
-        <img src="image.png" alt="Bedrijfslogo" style="width: 150px;">
-    </div>
+        <div id="code-input-container">
+            <h3>Voer je code in</h3>
+            <input type="text" id="codeInput" placeholder="Bijvoorbeeld: AMS123">
+            <button onclick="checkCode()">Ga naar aanbieding</button>
+        </div>
+    </main>
 
-    <!-- Invoerveld voor de code -->
-    <div id="code-input-container" style="max-width: 300px; margin: 50px auto;">
-        <h3 style="font-size: 24px; color: #333;">Code</h3>
-        <input type="text" id="codeInput" placeholder="Voer je code in" style="width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
-        
-        <!-- Zoekknop met aangepaste kleur -->
-        <button onclick="checkCode()" style="width: 100%; padding: 12px; margin-top: 10px; background-color: #04234d; color: white; border: none; cursor: pointer; font-size: 16px; border-radius: 4px; font-weight: bold;">
-            Ga naar aanbieding
-        </button>
-    </div>
+    <section id="uitleg">
+        <h4>Hoe werkt het?</h4>
+        <ol>
+            <li>Zie je een vette deal op TikTok? Noteer of onthoud de code die erbij staat.</li>
+            <li>Vul de code hierboven in – wij sturen je direct door naar de originele aanbieder van de vlucht.</li>
+            <li>Boek je ticket. Geen gedoe, geen kleine lettertjes, gewoon vliegen.</li>
+        </ol>
+    </section>
+
+    <script>
+        function checkCode() {
+            const code = document.getElementById('codeInput').value.trim();
+            if (code) {
+                window.location.href = `https://jouwsite.nl/deals/${code}`;
+            } else {
+                alert("Vul een geldige code in.");
+            }
+        }
+
 
     <script>
         function checkCode() {
