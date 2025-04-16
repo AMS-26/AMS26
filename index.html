@@ -24,7 +24,7 @@
       align-items: center;
       justify-content: flex-start;
       min-height: 100vh;
-      padding:  40px 20px 20px;
+      padding: 40px 20px 20px;
     }
     
     #logo {
@@ -87,12 +87,15 @@
       background-color: #ffaad6;
     }
     
-    /* "Hoe werkt het?" sectie: marge bovenaan aangepast zodat deze iets hoger staat */
+    /* "Hoe werkt het?" sectie: Staat na de slogan met een natuurlijke tussenruimte */
     #uitleg {
       padding: 60px 20px;
       background-color: #02102a;
-      margin-top: 1px;
+      margin-top: 20px;
       color: white;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 8px;
     }
     
     #uitleg h4 {
@@ -108,6 +111,8 @@
       padding: 0;
       font-size: 16px;
       line-height: 1.8;
+      text-align: left;
+      margin: 0 auto;
     }
     
     #uitleg ol li {
@@ -132,21 +137,22 @@
       <button onclick="checkCode()">Ga naar aanbieding</button>
     </div>
     
-    <!-- Nieuwe positie van de slogan -->
+    <!-- Slogan met twee regels -->
     <div id="slogan">
-  Wij speuren naar deals.<br>
-  Jij pakt je koffer.
-</div>
+      Wij speuren naar deals.<br>
+      Jij pakt je koffer.
+    </div>
+    
+    <!-- Uitleg komt nu direct onder de slogan -->
+    <section id="uitleg">
+      <h4>Hoe werkt het?</h4>
+      <ol>
+        <li>Zie je een vette deal op TikTok? Noteer of onthoud de code die erbij staat.</li>
+        <li>Vul de code hierboven in – wij sturen je direct door naar de originele aanbieder van de vlucht.</li>
+        <li>Boek je ticket. Geen gedoe, geen kleine lettertjes, gewoon vliegen.</li>
+      </ol>
+    </section>
   </main>
-
-  <section id="uitleg">
-    <h4>Hoe werkt het?</h4>
-    <ol>
-      <li>Zie je een vette deal op TikTok? Noteer of onthoud de code die erbij staat.</li>
-      <li>Vul de code hierboven in – wij sturen je direct door naar de originele aanbieder van de vlucht.</li>
-      <li>Boek je ticket. Geen gedoe, geen kleine lettertjes, gewoon vliegen.</li>
-    </ol>
-  </section>
   
   <script>
     function checkCode() {
@@ -157,8 +163,7 @@
         alert("Vul een geldige code in.");
       }
     }
-
-
+ 
     <script>
         function checkCode() {
             var code = document.getElementById("codeInput").value.trim().toLowerCase();
